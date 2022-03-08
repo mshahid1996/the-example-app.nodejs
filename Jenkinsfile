@@ -22,7 +22,8 @@ pipeline {
         }
         stage('npm') {
             steps {
-                archiveArtifacts artifacts: 'install npm', followSymlinks: false
+                bat '''npm install
+                '''
             }
 
         }
