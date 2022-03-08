@@ -27,6 +27,13 @@ pipeline {
             }
 
         }
+        stage('npm') {
+            steps {
+                bat '''npm run
+                '''
+            }
+
+        }
     
     }
 
