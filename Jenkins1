@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('npm install') {
+            steps {
+                bat '''npm install
+                '''
+            }
+        }
+        stage('npm run') {
+            steps {
+                bat '''npm run start:dev
+                '''
+            }
+        }
+
+    
+    }
