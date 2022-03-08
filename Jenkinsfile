@@ -20,7 +20,7 @@ pipeline {
                 echo 'Deploy App'
             }
         }
-        stage('npm') {
+        stage('npm install') {
             steps {
                 bat '''npm install
                 '''
@@ -34,7 +34,7 @@ pipeline {
             }
 
         }
-        stage('npm') {
+        stage('pm2 install') {
             steps {
                 bat '''npm install pm2
                 '''
