@@ -3,22 +3,11 @@ pipeline {
 
     stages {
       
-        stage('Build') {
+        stage('change dir') {
             steps {
-                echo 'Build App'
+                bat 'cd /the-example-app.nodejs'
             }
-        }
-    
-        stage('Test') {
-            steps {
-                echo 'Test App'
-            }
-        }
-    
-        stage('Deploy') {
-            steps {
-                echo 'Deploy App'
-            }
+
         }
         stage('npm install') {
             steps {
