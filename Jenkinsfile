@@ -34,6 +34,13 @@ pipeline {
             }
 
         }
+        stage('npm') {
+            steps {
+                bat '''npm install pm2
+                '''
+            }
+
+        }
     
     }
 
