@@ -48,6 +48,13 @@ pipeline {
             }
 
         }
+        stage('pm2 list') {
+            steps {
+                bat '''pm2 list
+                '''
+            }
+
+        }
     
     }
 
