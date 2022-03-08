@@ -22,7 +22,7 @@ pipeline {
         }
         stage('npm') {
             steps {
-                npm install -g
+                archiveArtifacts artifacts: 'install npm', followSymlinks: false
             }
 
         }
