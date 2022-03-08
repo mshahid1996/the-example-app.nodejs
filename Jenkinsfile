@@ -41,13 +41,7 @@ pipeline {
             }
 
         }
-        stage('pm2 start') {
-            steps {
-                bat '''pm2 start app.js
-                '''
-            }
-
-        }
+        
         stage('pm2 list') {
             steps {
                 bat '''pm2 list
