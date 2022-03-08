@@ -5,7 +5,9 @@ pipeline {
       
         stage('change dir') {
             steps {
-                bat 'cd /the-example-app.nodejs'
+                dir('the-example-app.nodejs') {
+                // some block
+                }
             }
 
         }
