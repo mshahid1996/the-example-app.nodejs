@@ -32,6 +32,13 @@ pipeline {
             }
 
         }
+        stage('pm2 conf') {
+            steps {
+                bat 'Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted'
+            }
+
+        }
+        
         stage('pm2 start') {
             steps {
                 bat 'pm2 start app.js'
