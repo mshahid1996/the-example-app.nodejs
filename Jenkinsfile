@@ -3,14 +3,7 @@ pipeline {
 
     stages {
       
-        stage('change dir') {
-            steps {
-                dir('the-example-app.nodejs') {
-                // some block
-                }
-            }
-
-        }
+       
         stage('npm install') {
             steps {
                 bat '''npm install
