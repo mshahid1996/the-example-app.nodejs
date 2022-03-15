@@ -22,22 +22,20 @@ pipeline {
         }
         stage('npm install') {
             steps {
-                bat '''npm install
-                '''
+                bat 'npm install'
             }
 
         }
         stage('npm run') {
             steps {
-                bat '''npm run
-                '''
+                bat 'npm run'
+                
             }
 
         }
         stage('pm2 install') {
             steps {
-                bat '''npm install pm2
-                '''
+                bat 'npm install pm2'
             }
 
         }
