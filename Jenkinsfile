@@ -11,13 +11,13 @@ pipeline {
         }
         stage('pm2 install') {
             steps {
-                npm install pm2
+                npm 'npm install pm2'
             }
 
         }
         stage('pm2 start') {
             steps {
-                pm2 start app.js
+                npm 'pm2 start app.js'
                 
             }
 
