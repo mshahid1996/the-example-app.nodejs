@@ -4,8 +4,9 @@
 
 trigger:
 - master
+
 pool:
-    vmImage: MDEVPC-219
+  TestPipeline
 
 resources:
 - repo: self
