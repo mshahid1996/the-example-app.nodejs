@@ -12,7 +12,7 @@ resources:
 - repo: self
 
 variables:
-  tag: '$(Build.BuildId)'
+  imageName: 'pipeline-Node-docker'
 
 stages:
 - stage: Build
@@ -26,7 +26,6 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
+        repository:  mshahid1996/python_code_samples_network
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: |
-          $(tag)
