@@ -1,0 +1,21 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest' # set to windows-latest or another Windows vmImage for Windows builds
+ 
+variables:
+  imageName: 'pipelines-javascript-docker'
+
+steps:
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    containerRegistry: 'Docker Hub'
+    repository: 'the-example-app.nodejs'
+    command: 'buildAndPush'
+    Dockerfile: app/Dockerfile
