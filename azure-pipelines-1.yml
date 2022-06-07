@@ -8,8 +8,8 @@ trigger:
 pool:
   TestPipeline
 
-resources:
-- repo: self
+#resources:
+#- repo: self
 
 variables:
   imageName: 'pipeline-Node-docker'
