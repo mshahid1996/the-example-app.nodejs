@@ -14,21 +14,22 @@ pool:
 variables:
   ImageName: 'wolfgangofner/microservicedemo:$(Build.BuildId)'
  
-stages:
-- stage: Build
-  displayName: Build image
-  jobs:  
-  - job: Build
-    displayName: Build and push Docker image
-    steps:
-    - task: Docker@1
-      displayName: 'Build the Docker image'
-      inputs:
-        containerregistrytype: 'Container Registry'
-        dockerRegistryEndpoint: 'Docker Hub'
-        command: 'Build an image'
-        dockerFile: '**/Dockerfile'
-        imageName: '$(ImageName)'
-        includeLatestTag: true
-        useDefaultContext: false
-        buildContext: '.'
+steps:
+- task: Docker@2
+  displayName: Login to ACR
+  inputs:
+    command: login
+    containerRegistry: dockerRegistryServiceConnection1
+- task: Docker@2
+  displayName: Login to Docker Hub
+  inputs:
+    command: login
+    containerRegistry: dockerRegistryServiceConnection2
+- task: Docker@2
+  displayName: Build and Push
+  inputs:
+    command: buildAndPush
+    repository: node # username/contosoRepository for DockerHub
+    tags: |
+      tag1
+      tag2
